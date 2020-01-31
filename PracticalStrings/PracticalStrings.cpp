@@ -17,9 +17,10 @@ int main() {
 	int count = 0, length;
 	int number;
 	cout << "Enter your word or phrase you want to convert here \n";
-	cin >> input;
+	getline(cin, input);
 	cout << "enter a value \n" << "\n";
 	cin >> number;
+	cin.ignore();
 	length = input.length();
 
 	for (count = 0; count < length; count++) {
@@ -28,7 +29,7 @@ int main() {
 			input[count] = tolower(input[count]);
 			for (int i = 0; i < number; i++) {
 				if (input[count] == 'z') {
-					input[count] == 'a';
+					input[count] = 'a';
 				}
 				else
 					input[count]++;
@@ -38,14 +39,15 @@ int main() {
 	}
 
 
-	cout << "result \n" << input;
+	cout << "result \n" << input << "\n";
 
 
 
 	cout << "Enter your word or phrase you want to convert here \n";
-	cin >> input;
+	getline(cin, input);
 	cout << "enter a value \n" << "\n";
 	cin >> number;
+	cin.ignore();
 	length = input.length();
 
 	for (count = 0; count < length; count++) {
@@ -53,8 +55,8 @@ int main() {
 		{
 			input[count] = tolower(input[count]);
 			for (int i = 0; i < number; i++) {
-				if (input[count] == 'z') {
-					input[count] == 'a';
+				if (input[count] == 'a') {
+					input[count] = 'z';
 				}
 				else
 					input[count]--;
